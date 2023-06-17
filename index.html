@@ -10,18 +10,15 @@
 
       <title>Markdown Previwer</title>
       <script src="./js/marked.js"></script>
-      <script>
-             // Create reference instance
-          import { marked } from 'marked';
 
-          // Set options
-          marked.use({
-          async: true,
-          pedantic: false,
-          gfm: true,
-          });
-          // Compile
-          console.log(marked.parse(markdownString));
+
+      <script>
+          console.log(marked("# kelvin"));
+
+          function updatePreview() {
+            document.getElementById("preview").innerHTML = marked(document.getElementById("editor").value)
+          }
+          
       </script>
     </head>
 
@@ -39,7 +36,7 @@
              </div>
              <div class="col-6 bg-danger">
                  <p>The Markdown Previwer will be here</p>
-                 <div id="Preview"></div>
+                 <div id="preview"></div>
              </div>
          </div>
        </div>

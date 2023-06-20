@@ -18,6 +18,33 @@
             var htmlText = marked(markdownText, { gfm: true });
             document.getElementById("preview").innerHTML = htmlText;
         }
+
+        function setDefault() {
+          let defaultText =`
+# Kelvin Markdown Previewer
+## a markdown previewer 
+[Learn more about kelvin.org]{https://www.usefulprogrammer.org}.
+<dl>
+<dl>Definition list<dl>
+  <dd>Does *not* work **very** well. Use HTML <en>tags</en>,</dd>
+</dl>
+
+\'Thank you for watching'\
+-Code
+-All
+-Day
+
+>Learn to Be like Kelvin
+
+![Kelvin](https://usefulprogrammer.org/wp-content/uploads/2020/05/20 Leonard do Vinci - Ginevra de Benci.jpg)
+
+*Bolded Text*
+           `;
+           let editorField = document.getElementById("editor");
+           let previewElement = document
+           editorField.value = defaultText;
+           previewElement.innerHTML = marked(defaultText);
+        }
     </script>
 </head>
 
@@ -25,7 +52,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center bg-success">
-                <h1>Markdown Previewer</h1>
+                <h1>Markdown Previewer by Kelvin</h1>
             </div>
         </div>
         <div class="row">

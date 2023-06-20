@@ -67,15 +67,15 @@ function example() {
             </div>
         </div>
         <div class="row">
-            <div class="col-6 bg-primary">
-                <h2 class="text-white text-center">Editor</h2>
-                <div class="form-group">
-                    <textarea id="editor" onkeyup="updatePreview()" class="form-control"></textarea>
+            <div class="col-6 bg-primary d-flex flex-column">
+                <h2 class="text-white text-center my-3">Editor</h2>
+                <div class="form-group flex-grow-1 d-flex flex-column">
+                    <textarea id="editor" onkeyup="updatePreview()" class="form-control flex-grow-1"></textarea>
                 </div>    
                 <button onclick="setDefault()">Set Default Text</button>
             </div>
-            <div class="col-6 bg-danger">
-                <h2 class="text-white text-center">Previewer:</h2>
+            <div class="col-6 bg-danger d-flex flex-column">
+                <h2 class="text-white text-center my-3">Preview</h2>
                 <div id="preview"></div>
             </div>
         </div>

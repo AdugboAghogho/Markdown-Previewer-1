@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Markdown Previewer</title>
+    <title>Markdown Previewer by Kelvin</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.0.0/marked.min.js"></script>
 
     <script>
@@ -20,31 +20,42 @@
         }
 
         function setDefault() {
-          let defaultText =`
-# Kelvin Markdown Previewer
+            let defaultText = `
+# Kelvin
 ## a markdown previewer 
-[Learn more about kelvin.org]{https://www.usefulprogrammer.org}.
-<dl>
-<dl>Definition list<dl>
-  <dd>Does *not* work **very** well. Use HTML <en>tags</en>,</dd>
-</dl>
+[Learn more about Kelvin.org](https://www.kelvin.org)
 
-\'Thank you for watching'\
--Code
--All
--Day
+\`This is an example of Inline Code\`
 
->Learn to Be like Kelvin
+\`\`\`
+// Code Block
+function example() {
+    return "multiLineCodeBlock";
+}
+\`\`\`
 
-![Kelvin](https://usefulprogrammer.org/wp-content/uploads/2020/05/20 Leonard do Vinci - Ginevra de Benci.jpg)
+- This
+- is
+- an
+- example
+- of
+- List 
+- Item
 
-*Bolded Text*
-           `;
-           let editorField = document.getElementById("editor");
-           let previewElement = document
-           editorField.value = defaultText;
-           previewElement.innerHTML = marked(defaultText);
+> This is an example of Blockquote
+
+![Kelvin](./vee2.jpg)
+
+**Bolded Text**`;
+
+            let editorField = document.getElementById("editor");
+            editorField.value = defaultText;
+            updatePreview();
         }
+
+        window.onload = function() {
+            setDefault();
+        };
     </script>
 </head>
 
@@ -58,7 +69,10 @@
         <div class="row">
             <div class="col-6 bg-primary">
                 <p>The editor will be here</p>
-                <textarea id="editor" onkeyup="updatePreview()"></textarea>
+                <div class="form-group">
+                    <textarea id="editor" onkeyup="updatePreview()" class="form-control"></textarea>
+                </div>    
+                <button onclick="setDefault()">Set Default Text</button>
             </div>
             <div class="col-6 bg-danger">
                 <p>The Markdown Previewer will be here</p>
